@@ -39,3 +39,10 @@ Route::get('/contacts', function(){
     $companies_data = Data::$companies_data;
     return view('contacts.index', compact('data', 'companies_data'));
 })->name('contacts.index');
+
+Route::get('/contacts', function(){
+    // $data = Data::$contacts_data;
+    $data = [];
+    $companies_data = Data::$companies_data;
+    return view('contacts.index', compact('data', 'companies_data'));
+})->name('contacts.index');
