@@ -31,4 +31,10 @@ class Data
             'phone'=>'090 233 322',
             'company'=>'Company 2']
     ];
+
+    public static $companies_data = [
+        1 => ['name'=>'Company 1'],
+        2 => ['name'=>'Company 2'],
+        3 => ['name'=>'Company 3']
+    ];
 }

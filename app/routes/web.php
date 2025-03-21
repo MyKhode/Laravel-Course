@@ -33,3 +33,9 @@ Route::get('/', function () {
 Route::get('/contacts/create', function(){
     return view('contacts.create');
 })->name('contacts.create');
+
+Route::get('/contacts', function(){
+    $data = Data::$contacts_data;
+    $companies_data = Data::$companies_data;
+    return view('contacts.index', compact('data', 'companies_data'));
+})->name('contacts.index');
