@@ -57,31 +57,11 @@
                                         </tr>
                                     </thead>
                                     @forelse ($data as $key => $value)
-    <tr>
-        <td class="text-center">{{ $loop->iteration }}</td>
-        <td>{{ $value['name'] }}</td>
-        <td>{{ $value['gender'] }}</td>
-        <td>{{ $value['email'] }}</td>
-        <td>{{ $value['phone'] }}</td>
-        <td>{{ $value['company'] }}</td>
-        <td class="text-center">
-            <a href="{{ route('contacts.show', $key) }}"
-               class="btn btn-sm btn-circle btn-outline-info" title="Show"><i
-                    class="bi bi-eye-fill"></i></a>
-            <a href="#" class="btn btn-sm btn-circle btn-outline-secondary"
-               title="Edit"><i class="bi bi-pencil-square"></i></a>
-            <a href="#" class="btn btn-sm btn-circle btn-outline-danger"
-               title="Delete" onclick="confirm('Are you sure?')"><i
-                    class="bi bi-x-circle"></i></a>
-        </td>
-    </tr>
-@empty
-    <tr>
-        <td colspan="7" class="text-center">
-            <p>No contact found</p>
-        </td>
-    </tr>
-@endforelse
+
+                                        @include('contacts._contact')
+                                    @empty
+                                        @include('contacts._empty')
+                                    @endforelse
                                 </table>
                             </div>
                             <nav class="mt-4">
